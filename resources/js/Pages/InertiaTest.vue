@@ -7,4 +7,5 @@
   <a href="/">aタグ経由です</a><br>
   <Link href="/">Link経由です</Link>
   <Link :href="route('inertia.index')">名前付きルートの確認です</Link>
+  <Link :href="route('inertia.show', { id : 1})">ルートパラメータのテストです</Link>
 </template>
