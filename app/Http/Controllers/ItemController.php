@@ -40,7 +40,15 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        Item::create([
+
+            'name' => $request->name,
+            'email' => $request->memo,
+            'price' => $request->price,
+
+        ]);
+
+        return to_route('items.index');
     }
 
     /**
