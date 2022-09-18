@@ -48,7 +48,11 @@ class ItemController extends Controller
 
         ]);
 
-        return to_route('items.index');
+        return to_route('items.index')
+            ->with([
+                'message' => '登録しました',
+                'status' => 'success'
+            ]);
     }
 
     /**
