@@ -43,7 +43,7 @@ class ItemController extends Controller
         Item::create([
 
             'name' => $request->name,
-            'email' => $request->memo,
+            'memo' => $request->memo,
             'price' => $request->price,
 
         ]);
