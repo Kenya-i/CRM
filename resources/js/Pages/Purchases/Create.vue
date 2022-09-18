@@ -1,6 +1,7 @@
 <script setup>
   import { getToday } from '@/common'
   import { computed, onMounted, reactive, ref } from 'vue';
+  import { Inertia } from '@inertiajs/inertia';
 
 const props = defineProps({
   'customers': Array,
@@ -34,13 +35,29 @@ const quantity = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",]
 
 const form = reactive({
   date: null,
-  customer_id: null
+  customer_id: null,
+  status: true,
+  items: []
 })
+
+const storePurchase = () => {
+  itemList.value.forEach(item => {
+    if(item.quantity > 0) {
+      form.items.push({
+        id: item.id,
+        quantity: item.quantity
+      })
+    }
+  })
+
+  Inertia.post(route('purchases.store'), form)
+}
 
 
 </script>
 
 <template>
+  <form @submit.prevent="storePurchase">
   日付<br>
   <input type="date" name="date" v-model="form.date">
   会員名<br>
@@ -79,5 +96,7 @@ const form = reactive({
   </tbody>
 </table>
 <br>
-合計: {{ totalPrice }}円
+合計: {{ totalPrice }}円<br>
+<button>登録する</button>
+</form>
 </template>
