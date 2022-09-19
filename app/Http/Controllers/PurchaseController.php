@@ -110,7 +110,7 @@ class PurchaseController extends Controller
      */
     public function edit(Purchase $purchase)
     {
-        //
+        $purchase = Purchase::find($purchase->id);
     }
 
     /**
