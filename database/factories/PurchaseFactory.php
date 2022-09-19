@@ -17,6 +17,9 @@ class PurchaseFactory extends Factory
      */
     public function definition()
     {
+        $dacade = $this->faker->dateTimeThisDecade;
+        $created_at = $dacade->modify('+2 years');
+        
         return [
             'customer_id' => rand(1, Customer::count()),
             'status' => $this->faker->boolean

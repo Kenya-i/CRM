@@ -36,7 +36,7 @@
     
     search.value = e.kana,
     emit('update:customerId', e.id)
-    toggleStatus()
+    toggleStatus
   }
 
 </script>
