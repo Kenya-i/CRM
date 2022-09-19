@@ -8,7 +8,6 @@
   import Micromodal from '@/Components/Micromodal.vue';
 
   const props = defineProps({
-  'customers': Array,
   'items': Array
 })
 
@@ -89,13 +88,8 @@ const storePurchase = () => {
                                   </div>
                                   <div class="p-2 w-full">
                                     <div class="relative">
-                                      <Micromodal />
                                       <label for="customer" class="leading-7 text-sm text-gray-600">会員名</label>
-                                      <select name="customer" v-model="form.customer_id" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                        <option v-for="customer in customers" :value="customer.id" :key="customer.id">
-                                          {{ customer.id}} : {{ customer.name }}
-                                        </option>
-                                      </select>
+                                      <Micromodal />
                                     </div>
                                   </div>
                                   
@@ -129,7 +123,7 @@ const storePurchase = () => {
                             
                           
                                   <div class="p-2 w-full">
-                                    <div class="relative">
+                                    <div class="">
                                       <label for="price" class="leading-7 text-sm text-gray-600">合計金額</label><br>
                                       <div class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ totalPrice }}円</div>
                                     </div>
