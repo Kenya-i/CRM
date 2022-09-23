@@ -61,12 +61,12 @@ const storePurchase = () => {
     </script>
     
     <template>
-        <Head title="購入画面" />
+        <Head title="購買履歴 編集画面" />
     
         <AuthenticatedLayout>
             <template #header>
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                  購入画面
+                  購買履歴 編集画面
                 </h2>
             </template>
     
@@ -85,7 +85,7 @@ const storePurchase = () => {
                                   <div class="p-2 w-full">
                                     <div class="relative">
                                       <label for="date" class="leading-7 text-sm text-gray-600">日付</label>
-                                      <input type="date" id="date" name="date" v-model="form.date" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                      <input disabled type="date" id="date" name="date" :value="form.date" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                   </div>
                                   <div class="p-2 w-full">
