@@ -91,7 +91,7 @@ const storePurchase = () => {
                                   <div class="p-2 w-full">
                                     <div class="relative">
                                       <label for="customer" class="leading-7 text-sm text-gray-600">会員名</label>
-                                      <Micromodal @update:customerId="setCustomerId"/>
+                                      <input disabled type="text" id="customer" name="customer" :value="props.order[0].customer_name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                     </div>
                                   </div>
                                   
@@ -128,6 +128,14 @@ const storePurchase = () => {
                                     <div class="">
                                       <label for="price" class="leading-7 text-sm text-gray-600">合計金額</label><br>
                                       <div class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">{{ totalPrice }}円</div>
+                                    </div>
+                                  </div>
+
+                                  <div class="p-2 w-full">
+                                    <div class="relative">
+                                      <label for="status" class="leading-7 text-sm text-gray-600">ステータス</label>
+                                      <input type="radio" id="status" name="status" v-model="form.status" value="1">未キャンセル
+                                      <input type="radio" id="status" name="status" v-model="form.status" value="0">キャンセルする
                                     </div>
                                   </div>
                                  
