@@ -131,8 +131,6 @@ class PurchaseController extends Controller
                 'price' => $allItem->price,
                 'quantity' => $quantity
             ]);
-
-            
         }
 
         //dd($items);
@@ -156,7 +154,7 @@ class PurchaseController extends Controller
      */
     public function update(UpdatePurchaseRequest $request, Purchase $purchase)
     {
-        //
+        dd($request, $purchase);
     }
 
     /**
